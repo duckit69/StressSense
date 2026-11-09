@@ -13,8 +13,6 @@ This repository contains only the selected model and what is needed to reproduce
 | Window | 30 s, updated every 10 s |
 | Calibration | Per operator: the mean of the first 5 min of baseline is subtracted from every feature |
 
-The comparison with other models, windows and signal sets that led to this choice is kept in the project archive, not here.
-
 ## What it reproduces
 
 | Result | Script | Value in the original run |
@@ -30,7 +28,6 @@ Results come from Python 3.15.0, Windows 11, an ESP32-WROOM-32 DevKit and the pa
 
 Scripts are numbered by project phase: phase 1 = data, features and evaluation; phase 2 = model export;
 phase 3 = checks on the ESP32; phase 4 = robot demo and its analysis. Log file names (`SSHRC_D1_...`, `SSHRC_L2_...`) and
-the run IDs quoted in comments keep the names they had in the original runs.
 
 ```
 python/                        all scripts; every parameter is in python/config.py
