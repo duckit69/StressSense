@@ -63,24 +63,9 @@ py -3.15 -m venv .venv
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-Linux / macOS:
-```
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-If Python 3.15 is not installed, another recent Python 3 should work, but the results were produced with 3.15.0.
-
-To refresh the frozen list after changing packages, run `pip freeze` in the activated environment. In PowerShell, write it in UTF-8 so GitHub and pip can read it:
-```
-pip freeze | Out-File -Encoding utf8 requirements.txt
-```
-
 ### Dataset
 
 Download WESAD from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection). Put the subject folders in `data/WESAD/` so that the files are `data/WESAD/S2/S2.pkl` … `data/WESAD/S17/S17.pkl` (15 subjects).
-
-The dataset is not redistributed here. Check its licence and citation on the [original dataset page](https://www.eti.uni-siegen.de/ubicomp/home/datasets/icmi18/).
 
 ### ESP32 (only for steps 5–7)
 
@@ -117,9 +102,3 @@ Step 4 trains on all 15 subjects. For an out-of-sample demo, where the demo subj
    ```
    python python/phase_4_analyse.py --speed 2
    ```
-
-## Notes
-
-- **No real wristband.** The ESP32 receives recorded WESAD signals over USB. Physical effort in the demo is synthetic, and the robot is a simulator.
-- **Firmware matches Python.** Every firmware constant mirrors `python/config.py`. `firmware/sshrc/src/model_params.h` and `bvp_filter.h` are generated files; the included `model_params.h` is the final 15-subject model.
-- **Each run is recorded.** `logs/runs.csv` gets the git commit, package versions and a configuration hash for every run, so a result can be traced back to its exact code and settings.
