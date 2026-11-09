@@ -1,0 +1,4 @@
+Put the WESAD subject folders here, so that each subject file sits at
+    data/WESAD/S2/S2.pkl, data/WESAD/S3/S3.pkl, ... data/WESAD/S17/S17.pkl
+(15 subjects: S2-S11, S13-S17). Download: https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection
+The dataset is not included in this repository.
